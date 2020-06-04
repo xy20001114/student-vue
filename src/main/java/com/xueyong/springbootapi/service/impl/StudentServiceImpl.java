@@ -3,6 +3,7 @@ package com.xueyong.springbootapi.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xueyong.springbootapi.entity.Student;
+import com.xueyong.springbootapi.entity.StudentVo;
 import com.xueyong.springbootapi.mapper.StudentMapper;
 import com.xueyong.springbootapi.service.IStudentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -22,7 +23,7 @@ import java.util.List;
 public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> implements IStudentService {
 
     @Override
-    public IPage<Student> getPageInfo(Integer pageNum, Integer pageSize, Student student) {
-        return this.getBaseMapper().getPageInfo(new Page(pageNum,pageSize),student);
+    public IPage<StudentVo> getPageInfo(Integer pageNum, Integer pageSize, StudentVo studentvo) {
+        return this.getBaseMapper().getPageInfo(new Page(pageNum,pageSize),studentvo);
     }
 }

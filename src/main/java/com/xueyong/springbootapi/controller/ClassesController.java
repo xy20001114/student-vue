@@ -4,10 +4,7 @@ package com.xueyong.springbootapi.controller;
 import com.xueyong.springbootapi.entity.Classes;
 import com.xueyong.springbootapi.service.IClassesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/classes")
+//跨域
 public class ClassesController {
 
     @Autowired
@@ -29,5 +27,11 @@ public class ClassesController {
     @GetMapping("selectclasses")
     public List<Classes> selectclasses(){
         return iclassesService.getBaseMapper().selectList(null);
+    }
+    
+    @PostMapping("AddName")
+    public Boolean show(@RequestBody Classes classes){
+        System.out.println(classes);
+        return iclassesService.save(classes);
     }
 }

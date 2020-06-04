@@ -3,6 +3,7 @@ package com.xueyong.springbootapi.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.xueyong.springbootapi.entity.Student;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xueyong.springbootapi.entity.StudentVo;
 
 import java.util.List;
 
@@ -16,5 +17,5 @@ import java.util.List;
  */
 public interface IStudentService extends IService<Student> {
 
-    IPage<Student> getPageInfo(Integer pageNum, Integer pageSize, Student student);
+    IPage<StudentVo> getPageInfo(Integer pageNum, Integer pageSize, StudentVo studentvo);
 }
